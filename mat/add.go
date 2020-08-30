@@ -11,9 +11,9 @@ func Add(a *Mat, b *Mat) (Mat, error) {
 	if a.column != b.column {
 		return c, fmt.Errorf("Argument column %d, %d is not equal", a.column, b.column)
 	}
-	num := a.row * a.column
-	c.row = a.row
-	c.column = b.column
+	num := a.Row() * a.Column()
+	c.row = a.Row()
+	c.column = a.Column()
 	for i := 0; i < num; i++ {
 		c.value = append(c.value, a.value[i]+b.value[i])
 	}
